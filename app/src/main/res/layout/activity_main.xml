@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhiteBlue"
+    tools:context=".ui.main.MainActivity">
+
+    <com.gauravk.bubblenavigation.BubbleNavigationConstraintView
+        android:id="@+id/topNavigationContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:padding="8dp"
+        app:bnc_mode="spread"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainer">
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/navMovies"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            app:bt_active="true"
+            app:bt_colorActive="@color/white"
+            app:bt_colorInactive="@color/white"
+            app:bt_icon="@drawable/video"
+            app:bt_shape="@drawable/bg_bubble_navigation"
+            app:bt_title="Movie"
+            app:layout_constraintEnd_toStartOf="@+id/navTVShows"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/topNavigationContainer" />
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/navTVShows"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            app:bt_active="false"
+            app:bt_colorActive="@color/white"
+            app:bt_colorInactive="@color/white"
+            app:bt_icon="@drawable/tv"
+            app:bt_shape="@drawable/bg_bubble_navigation"
+            app:bt_title="TVShow"
+            app:layout_constraintEnd_toStartOf="@+id/navFavorites"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/navMovies"
+            app:layout_constraintTop_toTopOf="@id/topNavigationContainer" />
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/navFavorites"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            app:bt_active="false"
+            app:bt_colorActive="@color/white"
+            app:bt_colorInactive="@color/white"
+            app:bt_icon="@drawable/favorite"
+            app:bt_shape="@drawable/bg_bubble_navigation"
+            app:bt_title="Favorite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/navTVShows"
+            app:layout_constraintTop_toTopOf="@id/topNavigationContainer" />
+
+    </com.gauravk.bubblenavigation.BubbleNavigationConstraintView>
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/topNavigationContainer"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

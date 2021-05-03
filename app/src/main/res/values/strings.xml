@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">NetflixCollection</string>
+    <string name="overview">Overview</string>
+    <string name="title_movie">Movie</string>
+    <string name="title_tvshow">TVShow</string>
+    <string name="text_movie">The SpongeBob Movie: Sponge on the Run</string>
+    <string name="text_overview">When his best friend Gary is suddenly snatched away, SpongeBob takes Patrick on a madcap mission far beyond Bikini Bottom to save their pink-shelled pal</string>
+    <string name="back">Back</string>
+    <string name="toolbar">Toolbar</string>
+    <string name="loading_text">Wait a moment, Still loading</string>
+    <string name="todo">content description</string>
+    <string name="rating_value">9.9</string>
+    <string name="date">12 – 4 - 2020</string>
+    <string name="status">Releashed</string>
+    <string name="splash_title">NetflixCollection</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="notfound">not found</string>
+    <string name="message_undo">Batalkan menghapus item sebelumnya?</string>
+    <string name="message_ok">OK</string>
+    <string name="favorite">Favorite</string>
+    <string name="popularity">Popularity</string>
+    <string name="vote">Vote</string>
+    <string name="newest">Newest</string>
+    <string name="random">Random</string>
+    <string name="baseUrlImage">http://image.tmdb.org/t/p/w500%s</string>
+    <string name="add_movie">Please add your favorite movie</string>
+    <string name="add_tvshows">Please add your favorite tvshow</string>
+    <string name="popular_value">123.899.897</string>
+    <string name="vote_average">Vote Average</string>
+</resources>
