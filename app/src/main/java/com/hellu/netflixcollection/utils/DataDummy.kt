@@ -18,7 +18,9 @@ object DataDummy {
                 615457,
                 "Nobody",
                 735,
-                "/oBgWY00bEFeZ9N25wWVyuQddbAo.jpg"
+                "/oBgWY00bEFeZ9N25wWVyuQddbAo.jpg",
+                false,
+                false
             )
         )
         movies.add(
@@ -51,7 +53,9 @@ object DataDummy {
                 95057,
                 "Superman & Lois",
                 748,
-                "/pPKiIJEEcV0E1hpVcWRXyp73ZpX.jpg"
+                "/pPKiIJEEcV0E1hpVcWRXyp73ZpX.jpg",
+                false,
+                false
             )
         )
         tvshows.add(

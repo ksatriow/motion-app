@@ -29,6 +29,7 @@ class MovieRepositoryTest {
     private val remote = mock(RemoteDataSource::class.java)
     private val local = mock(LocalDataSource::class.java)
     private val appExecutors = mock(AppExecutors::class.java)
+    private val testExecutors: AppExecutors = AppExecutors(TestExecutor(), TestExecutor(), TestExecutor())
 
     private val movieAppRepository = FakeMovieRepository(remote, local, appExecutors)
 
@@ -155,17 +156,14 @@ class MovieRepositoryTest {
         assertEquals(tvShowResponses.size.toLong(), favoriteTVShowEntities.data?.size?.toLong())
     }
 
-//    @Test
-//    fun getBookmarkedCourses() {
-//        val dataSourceFactory = mock(DataSource.Factory::class.java) as DataSource.Factory<Int, MovieEntity>
-//        `when`(local.getAllFavoriteMovies(random)).thenReturn(dataSourceFactory)
-//        movieAppRepository.getFavoriteMovies(random)
-//
-//        val courseEntities = Resource.success(PagedListUtil.mockPagedList(DataDummy.generateDummyMovies()))
-//        verify(local).getAllFavoriteMovies(random)
-//        assertNotNull(courseEntities)
-//        assertEquals(movieResponses.size.toLong(), courseEntities.data?.size?.toLong())
-//    }
-
+    @Test
+    fun setFavoriteMovies() {
+        val dummyDetailTv: MovieEntity = DataDummy.generateDummyMovies()[0]
+        val newState = !dummyDetailTv.favorite
+        `when`(appExecutors.diskIO()).thenReturn(testExecutors.diskIO())
+        doNothing().`when`(local).setMovieFavorite(dummyDetailTv, newState)
+        movieAppRepository.setMoviesFavorite(dummyDetailTv, newState)
+        verify(local, times(1)).setMovieFavorite(dummyDetailTv, newState)
+    }
 
 }
